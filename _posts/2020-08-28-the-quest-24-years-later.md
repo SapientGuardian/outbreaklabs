@@ -12,7 +12,7 @@ All at once, my memories returned. I activated the interface where you answer th
 I thought I might reverse engineer the game. I took a look through its files, and after some research, identified that the game code was baked into DXR files: an output of Macromedia Director, a logical choice for this type of software, back in the 90s. In all this time, nobody has made a decompiler for Director's DXR format, which I found described as a stack-based virtual machine. This seemed like a dead end. I browsed some of the text file based resources, but didn't find any leads there. Finally I tried searching for the answers that I was able to get as strings in the DXR binaries. Success! I located a fragment of game data that contained the answers I'd located so far, and it was obvious that the remaining answers were right beside them. I entered the remaining riddle answers. I could tell that I _never_ would have guessed all but one or two of them. I have no idea how anybody beat this game - maybe nobody has.
 
 Without further ado, here are the answers, which I cheated to get:
-![](images/content/QuestAnswers.png)
+![](../images/content/QuestAnswers.png)
 
 1. Ramses II
 2. Arthur

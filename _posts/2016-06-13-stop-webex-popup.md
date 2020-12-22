@@ -11,4 +11,4 @@ After diplomacy with the IT department failed, my first attempt at stopping this
 
 To avoid having the patch inadvertently removed, I developed a small Windows service that waits for WebEx to be launched and patches it in memory to remove the code that spawns the popup.
 
-I have uploaded the source code to the service at [https://github.com/SapientGuardian/WebExPopupKiller](https://github.com/SapientGuardian/WebExPopupKiller)){:target="_blank"} for anyone curious as to how to write such a thing.
+I have uploaded the source code to the service at [https://github.com/SapientGuardian/WebExPopupKiller](https://github.com/SapientGuardian/WebExPopupKiller){:target="_blank"} for anyone curious as to how to write such a thing.

@@ -2,10 +2,10 @@
 layout: post
 title: Calculating the WPA2 PMK using C#
 categories: [C#,Packet Gremlin]
-excerpt: One of the features I've wanted to implement for [Packet Gremlin](https://github.com/SapientGuardian/LibPacketGremlin){:target="_blank"} is the ability to decrypt encrypted WiFi traffic. I only know of two tools capable of this: [Airdecap-ng](http://www.aircrack-ng.org/doku.php?id=airdecap-ng){:target="_blank"}, which can't do it on a live capture, and [Wireshark](http://www.wireshark.org){:target="_blank"}, which can't capture wireless traffic on Windows due to a limitation of WinPCap.
+excerpt: One of the features I've wanted to implement for [Packet Gremlin](https://github.com/SapientGuardian/LibPacketGremlin){:target="_blank"} is the ability to decrypt encrypted WiFi traffic.
 ---
 
-One of the features I've wanted to implement for [Packet Gremlin](https://github.com/SapientGuardian/LibPacketGremlin){:target="_blank"} is the ability to decrypt encrypted WiFi traffic.
+One of the features I've wanted to implement for [Packet Gremlin](https://github.com/SapientGuardian/LibPacketGremlin){:target="_blank"} is the ability to decrypt encrypted WiFi traffic. I only know of two tools capable of this: [Airdecap-ng](http://www.aircrack-ng.org/doku.php?id=airdecap-ng){:target="_blank"}, which can't do it on a live capture, and [Wireshark](http://www.wireshark.org){:target="_blank"}, which can't capture wireless traffic on Windows due to a limitation of WinPCap. One of the things needed for implementing this feature is to calculate the PMK (Pairwise Master Key). By studying the source code of airdecap-ng and various online resources, I found that this is actually trivial:
 
 ```cs
 public static byte[] CalculatePMK(byte[] psk, byte[] ssid, int pmkLength = 32)

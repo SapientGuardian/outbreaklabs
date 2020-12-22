@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Quest, 24 Years Later.
-categories: []
+categories: [Reverse Engineering]
 excerpt: In 1996, AOL included a game called The Quest along with the AOL 2.0 CD. It was a point-and-click game filled with tie-ins to AOL, and contained content from Cartoon Network and other brands. The objective of the game was to answer ten "riddles" based on the in-game content and linked demos. The reward for completing the quest was... an hour of AOL. Back in 1996, I was unable to progress beyond the first one or two riddles.
 ---
 

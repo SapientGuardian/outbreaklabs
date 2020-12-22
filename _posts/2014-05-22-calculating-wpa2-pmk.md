@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Calculating the WPA2 PMK using C#
-categories: []
+categories: [C#,Packet Gremlin]
 excerpt: test
 ---
 

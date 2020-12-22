@@ -1,6 +1,6 @@
 ---
 layout: post
-title: test
+title: Calculating the WPA2 PMK using C#
 categories: []
 excerpt: test
 ---

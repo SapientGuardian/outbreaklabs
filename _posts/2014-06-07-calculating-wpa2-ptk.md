@@ -19,7 +19,7 @@ public static byte[] CalculatePTK(byte[] pmk, byte[] stmac, byte[] bssid, byte[]
                 {
                     bw.Write(new byte[] { 0x50, 0x61, 0x69, 0x72, 0x77, 0x69, 0x73, 0x65, 0x20, 0x6b, 0x65, 0x79, 0x20, 0x65, 0x78, 0x70, 0x61, 0x6e, 0x73, 0x69, 0x6f, 0x6e, 0 });/* Literally the string Pairwise key expansion, with a trailing 0*/
 
-                    if (memcmp(stmac, bssid) &amp;lt; 0)
+                    if (memcmp(stmac, bssid) < 0)
                     {
                         bw.Write(stmac);
                         bw.Write(bssid);
@@ -30,7 +30,7 @@ public static byte[] CalculatePTK(byte[] pmk, byte[] stmac, byte[] bssid, byte[]
                         bw.Write(stmac);
                     }
 
-                    if (memcmp(snonce, anonce) &amp;lt; 0)
+                    if (memcmp(snonce, anonce) < 0)
                     {
                         bw.Write(snonce);
                         bw.Write(anonce);
@@ -45,7 +45,7 @@ public static byte[] CalculatePTK(byte[] pmk, byte[] stmac, byte[] bssid, byte[]
                 }
             }
                         
-            for (byte i = 0; i &amp;lt; 4; i++ )
+            for (byte i = 0; i < 4; i++ )
             {
                 pke[99] = i;
                 var hmacsha1 = new HMACSHA1(pmk);                
@@ -59,20 +59,20 @@ public static byte[] CalculatePTK(byte[] pmk, byte[] stmac, byte[] bssid, byte[]
 Perhaps the most unexpected part of this algorithm was that the string "Pairwise key expansion" is actually part of it. The airdecap-ng implementation is more efficient in a number of ways, but performance was not my goal here. It takes advantage of the fast memcmp c function in order to compare some of the variables not just for equality, but also "order". This behavior of memcmp is often overlooked; most "ports" of the function to other languages only determine equality. Here is the implementation I used, I'm afraid I've lost the original source:
 
 ```cs
-for (int i = 0; i &amp;lt; b1.Length; i++)
-            {
-                if (b1[i] != b2[i])
-                {
-                    if ((b1[i] &amp;gt;= 0 &amp;amp;&amp;amp; b2[i] &amp;gt;= 0) || (b1[i] &amp;lt; 0 &amp;amp;&amp;amp; b2[i] &amp;lt; 0))
-                        return b1[i] - b2[i];
-                    if (b1[i] &amp;lt; 0 &amp;amp;&amp;amp; b2[i] &amp;gt;= 0)
-                        return 1;
-                    if (b2[i] &amp;lt; 0 &amp;amp;&amp;amp; b1[i] &amp;gt;= 0)
-                        return -1;
-                }
-            }
-            return 0;
-          }
+for (int i = 0; i <; b1.Length; i++)
+{
+    if (b1[i] != b2[i])
+    {
+        if ((b1[i] >= 0 && b2[i] >= 0) || (b1[i] < 0 && b2[i] < 0))
+            return b1[i] - b2[i];
+        if (b1[i] < 0 && b2[i] >= 0)
+            return 1;
+        if (b2[i] < 0 && b1[i] >= 0)
+            return -1;
+    }
+}
+return 0;
+        
 ```
 
 Part 1:

@@ -69,7 +69,7 @@ Or we would be, except for the second problem: we know it's the Borland Register
 			call[buffer]
 		}
 
-	}
+	
 ```
 
 In the Borland Register calling convention, the first argument goes into `eax`, the second in `edx`. That's exactly what I've done, copying the two function arguments into those registers, and then executing the `call` directly to the buffer memory. When the call comes back, the return value would be in `eax` if I needed it, though in this particular case I didn't.
